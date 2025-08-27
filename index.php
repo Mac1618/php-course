@@ -20,37 +20,33 @@
 </head>
 
 <body>
-    <?php 
-      $books = [
-        "Do Androids Dream of Electric Sheep?",
-        "The Langoliers",
-        "Hail Mairy",
+  <?php
+    // associative arrays - associating a name for the key of an array index 
+    $books = [
+      [
+        'name' => 'Do Androids Dream of Electric Sheep?',
+        'author' => 'John Doe',
+        'url' => 'https.sample.com'
+      ],
+      [
+        'name' => 'The Langoliers',
+        'author' => 'Andy Weir',
+        'url' => 'https.sample.com'
       ]
-    ?>
+    ];
+  ?>
 
-    <h1>Recommeded Books:</h1>
-    
-    <!-- simple html element -->
-    <ul>
-        <?php 
-          foreach($books as $book) {
-            echo "<li>{$book}'s</li>";
-          }
+  <!-- with associative arrays -->
+  <h1>Recommeded Books:</h1>
+  <ol>
+    <?php foreach ($books as $book) : ?>
+      <li>
+        <a href="<?= $book['url'] ?>">
+          <?= $book['name'] ?>
+        </a>
+      </li>
+    <?php endforeach ?>
+  </ol>
 
-        ?>
-    </ul>
-
-    <!-- with complex html elements -->
-     <ul>
-      <?php foreach($books as $book) : ?>
-        <strong>
-          <li>
-            <?= $book ?>
-          </li>
-        </strong>
-        <hr>
-      <?php endforeach; ?>  
-     </ul>
 </body>
-
 </html>
