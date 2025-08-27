@@ -8,8 +8,10 @@
 
   <style>
     body {
-      display: grid;
-      place-items: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       height: 100vh;
       margin: 0;
       font-family: sans-serif;
@@ -18,19 +20,37 @@
 </head>
 
 <body>
+    <?php 
+      $books = [
+        "Do Androids Dream of Electric Sheep?",
+        "The Langoliers",
+        "Hail Mairy",
+      ]
+    ?>
 
-  <?php
-  $book = "Dark Matter";
-  $read = true;
+    <h1>Recommeded Books:</h1>
+    
+    <!-- simple html element -->
+    <ul>
+        <?php 
+          foreach($books as $book) {
+            echo "<li>{$book}'s</li>";
+          }
 
-  if ($read) {
-    $message = "You have read $book";
-  } else {
-    $message = "You have NOT read $book";
-  }
-  ?>
-  <h1> <?= $message; ?> </h1>
+        ?>
+    </ul>
 
+    <!-- with complex html elements -->
+     <ul>
+      <?php foreach($books as $book) : ?>
+        <strong>
+          <li>
+            <?= $book ?>
+          </li>
+        </strong>
+        <hr>
+      <?php endforeach; ?>  
+     </ul>
 </body>
 
 </html>
