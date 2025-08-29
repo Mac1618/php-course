@@ -1,3 +1,4 @@
 <?php
 
-  require "index.view.php";
+  $heading = "Dashboar";
+  require "views/index.view.php";
