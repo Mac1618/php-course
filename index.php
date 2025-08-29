@@ -26,23 +26,43 @@
       [
         'name' => 'Do Androids Dream of Electric Sheep?',
         'author' => 'John Doe',
-        'url' => 'https.sample.com'
+        'releaseYear' => 2001,
+        'url' => 'http.sample.com'
+      ],
+      [
+        'name' => 'Human Nature',
+        'author' => 'John Doe',
+        'releaseYear' => 2001,
+        'url' => 'http.sample.com'
       ],
       [
         'name' => 'The Langoliers',
         'author' => 'Andy Weir',
-        'url' => 'https.sample.com'
+        'releaseYear' => 2005,
+        'url' => 'http.sample.com'
       ]
     ];
+
+    // functions in php
+    function filterByAuthor ($books, $author) {
+      foreach($books as $book){
+        if ($book['author'] === $author) {
+          return [$book];
+        } else {
+          return;
+        }
+      }
+    }
+
   ?>
 
   <!-- with associative arrays -->
   <h1>Recommeded Books:</h1>
   <ol>
-    <?php foreach ($books as $book) : ?>
+    <?php foreach (filterByAuthor($books, "John Doe") as $book) : ?>
       <li>
         <a href="<?= $book['url'] ?>">
-          <?= $book['name'] ?>
+          <?= $book['name'] ?> - By <?= $book['author'] ?>
         </a>
       </li>
     <?php endforeach ?>
