@@ -15,15 +15,15 @@
                   ?> rounded-md px-3 py-2 text-sm font-medium">
                   Dashboard
                 </a>                
-                <a href="/about.php" class="
-                  <?= $_SERVER['REQUEST_URI'] === '/about.php' ? 
+                <a href="/about" class="
+                  <?= $_SERVER['REQUEST_URI'] === '/about' ? 
                     'bg-gray-950/50 text-white' : 
                     'text-gray-300 hover:bg-white/5 hover:text-white'
                   ?> rounded-md px-3 py-2 text-sm font-medium">
                   About
                 </a>
-                <a href="/contact.php" class="
-                  <?= $_SERVER['REQUEST_URI'] === '/contact.php' ? 
+                <a href="/contact" class="
+                  <?= $_SERVER['REQUEST_URI'] === '/contact' ? 
                     'bg-gray-950/50 text-white' : 
                     'text-gray-300 hover:bg-white/5 hover:text-white'
                   ?> rounded-md px-3 py-2 text-sm font-medium">
