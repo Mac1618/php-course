@@ -1,0 +1,20 @@
+Creating database with tableplus:
+1. Run laragon MySQL server
+2. Create connection with tableplus
+3. Create database and tables
+
+
+MySQL Queries:
+1. SELECT
+  a. select * from <table_name>;
+    - SAMPLE: select * from posts;                     
+    - MEANING: query all data from the tablename
+
+  b. select <column_1>, <column_2> from <table_name>;             
+    - SAMPLE: select id, title from posts;
+    - MEANING: query specific column
+
+2. WHERE
+  a. select * form <table_name> where id = 1;
+    - SAMPLE: select * from posts where id = 1;
+    - MEANING: query all columns, with same id
