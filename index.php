@@ -5,21 +5,17 @@
   // require "routes.php";
   require "Database.php";
 
+  $dbConfig = require "dbConfig.php";
 
   // Database instance
-  $db = new Database();
+  $db = new Database($dbConfig['database']);
+  
+  $id = $_GET['id'];
+  $query = "select * from posts where id = :id";
 
-  // multiple     - db[0][title]
-  $posts = $db->query("select * from posts")->fetchAll(PDO::FETCH_ASSOC);  
-  // dd($db->query("select * from posts")->fetchAll(PDO::FETCH_ASSOC));
+  // get params id value
+    // NOTE be careful here! Don't directly past the parts id here in the query statement. There could be malicious code
+    // - SAMPLE: localhost?id=1; drop table users;
+  $posts = $db->query($query, [':id' => $id])->fetch();
 
-  // single       - db[title]
-  $post = $db->query("select * from posts where id = 1")->fetch(PDO::FETCH_ASSOC);
-  // dd($db->query("select * from posts where id = 1")->fetch(PDO::FETCH_ASSOC));
-
-  // display all db results
-  foreach($posts as $post) {
-    echo "<li>{$post['title']}</li>";
-  }
-
-  echo "<li>{$post['title']}</li>";
+  dd($posts);

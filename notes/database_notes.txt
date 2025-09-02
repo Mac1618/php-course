@@ -1,3 +1,7 @@
+Rule:
+  - always assume users are "guilty" and not "inoccent".
+
+
 Creating database with tableplus:
 1. Run laragon MySQL server
 2. Create connection with tableplus
@@ -15,6 +19,31 @@ MySQL Queries:
     - MEANING: query specific column
 
 2. WHERE
-  a. select * form <table_name> where id = 1;
+  a. select * form <table_name> where <column_name> = <column_value>;
     - SAMPLE: select * from posts where id = 1;
     - MEANING: query all columns, with same id
+
+3. OR
+  a. select * form <table_name> where <column_name> = <column_value> or <column_name> = <column_value>;
+    - SAMPLE: select * from posts where id = 1 or title = 'My first blog';
+    - MEANS:  adding morethan 1 condition with "WHERE"
+
+4. DROP
+  a. drop table <table_name>
+    - SAMPLE: drop table posts
+    - MEANS:  delete the table
+
+5. CREATE
+  a. create table <table_name> {
+        <column_name_1> <column_types_or_options_1>
+        <column_name_2> <column_types_or_options_2>
+        <column_name_3> <column_types_or_options_3>
+        etc...
+      }
+    - SAMPLE: create table 'users' {
+                'id' int(11) NOT NULL AUTO_INCREMENT,
+                'username' varchat(100) NOT NULL,
+                'admin' tinyint(2) NOT NULL DEFAULT '0',
+                PRIMARY KEY ('id')
+              }
+    - MEANS: create a new table

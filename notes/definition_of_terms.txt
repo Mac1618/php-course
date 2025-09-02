@@ -1,0 +1,9 @@
+Definition of Terms
+
+1. Scope Resolution Operator     - "::"
+  - SAMPLE:   - fetchAll(PDO::FETCH_ASSOC) 
+  - MEANS:    - gives access to "const" inside a "class"
+
+2. const in class 
+  - MEANS:    - value of a "conts" don't change
+              - all const are named "CAPITAL LETTERS
