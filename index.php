@@ -2,8 +2,8 @@
 
   // utilities
   require "functions.php";
-  // require "routes.php";
   require "Database.php";
+  require "routes.php";
 
   $dbConfig = require "dbConfig.php";
 
@@ -17,5 +17,4 @@
     // NOTE be careful here! Don't directly past the parts id here in the query statement. There could be malicious code
     // - SAMPLE: localhost?id=1; drop table users;
   $posts = $db->query($query, [':id' => $id])->fetch();
-
   dd($posts);
